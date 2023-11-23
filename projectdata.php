@@ -1,0 +1,75 @@
+<?php
+require "connect.php";
+$sql_project = "INSERT INTO `Project` (`FolderID`, `ProjectID`, `ProjectName`, `StartDate`, `DueDate`, `ProjectProgress`) 
+VALUES
+('FD01', 'PJ01', 'Website Design', '2022-01-09', '2023-12-09', 'Done'),
+('FD01', 'PJ02', 'User Experience', '2022-01-10', '2023-12-10', 'Done'),
+('FD01', 'PJ03', 'Graphics and Logo', '2022-01-11', '2023-12-11', 'Done'),
+('FD01', 'PJ04', 'Game Graphics', '2022-02-19', '2023-12-12', 'Done'),
+('FD02', 'PJ05', 'Interaction Design', '2022-03-30', '2023-11-30', 'Done'),
+('FD02', 'PJ06', 'Responsive Design Concepts', '2022-05-08', '2023-12-14', 'Stop'),
+('FD03', 'PJ07', 'Risk Management Plans', '2022-06-16', '2023-11-02', 'Stop'),
+('FD03', 'PJ08', 'Project Status Reports', '2022-07-25', '2023-10-04', 'Stop'),
+('FD03', 'PJ09', 'Meeting Agendas and Minutes', '2022-09-02', '2023-12-17', 'Planning'),
+('FD03', 'PJ10', 'Communication Plans', '2022-10-11', '2024-02-29', 'Planning'),
+('FD04', 'PJ11', 'Testing Procedures', '2022-11-19', '2024-05-13', 'Planning'),
+('FD05', 'PJ12', 'Compatibility Checks', '2023-01-13', '2024-07-26', 'Planning'),
+('FD06', 'PJ13', 'Source Code', '2023-03-09', '2024-10-08', 'Planning'),
+('FD07', 'PJ14', 'Test Execution Logs', '2023-05-03', '2024-12-21', 'On-hold'),
+('FD08', 'PJ15', 'Tool Configuration Files', '2023-06-27', '2025-03-05', 'On-hold'),
+('FD08', 'PJ16', 'Installation Instructions', '2023-08-21', '2025-05-18', 'On-hold'),
+('FD08', 'PJ17', 'License Information', '2023-10-15', '2025-07-31', 'On-hold'),
+('FD08', 'PJ18', 'Testing Frameworks', '2023-01-02', '2024-01-01', 'On-hold'),
+('FD08', 'PJ19', 'Tool Usage Policies', '2023-02-02', '2024-02-01', 'On-hold'),
+('FD08', 'PJ20', 'Integration Documentation', '2023-03-02', '2024-03-01', 'Done'),
+('FD09', 'PJ21', 'Test Scripts', '2023-04-02', '2024-04-01', 'Done'),
+('FD09', 'PJ22', 'CI Systems', '2023-05-02', '2024-05-01', 'Done'),
+('FD10', 'PJ23', 'Regression Test Suites', '2023-06-02', '2024-06-01', 'Done'),
+('FD10', 'PJ24', 'Test Data Versioning', '2023-07-02', '2024-07-01', 'Stop'),
+('FD10', 'PJ25', 'Regression Test Plan', '2023-08-02', '2024-08-01', 'Stop'),
+('FD11', 'PJ26', 'Steps to Reproduce Bugs', '2023-09-02', '2024-09-01', 'Stop'),
+('FD12', 'PJ27', 'UAT Test Data', '2023-10-02', '2024-10-01', 'On-hold'),
+('FD12', 'PJ28', 'UAT Test Cases', '2023-11-02', '2024-11-01', 'Planning'),
+('FD12', 'PJ29', 'UAT Schedule', '2023-12-02', '2024-12-01', 'Planning'),
+('FD12', 'PJ30', 'UAT Progress Reports', '2022-05-07', '2025-01-01', 'Planning'),
+('FD13', 'PJ31', 'Post Ideas and Brainstorming', '2022-05-09', '2025-02-01', 'On-hold'),
+('FD13', 'PJ32', 'Hashtag Strategy', '2022-05-11', '2025-03-01', 'Done'),
+('FD13', 'PJ33', 'Competitor Analysis', '2022-05-13', '2025-04-01', 'Done'),
+('FD13', 'PJ34', 'Paid Social Media Campaigns', '2022-05-15', '2023-02-03', 'Done'),
+('FD14', 'PJ35', 'Final Edited Video', '2022-05-17', '2023-03-03', 'Done'),
+('FD15', 'PJ36', 'Tax Documents', '2022-05-19', '2023-04-03', 'Planning'),
+('FD16', 'PJ37', 'Management Reports', '2022-05-21', '2023-05-03', 'On-hold'),
+('FD17', 'PJ38', 'Survey Methodology', '2022-05-23', '2023-06-03', 'Stop'),
+('FD18', 'PJ39', 'Net Promoter Score', '2022-05-25', '2023-07-03', 'On-hold'),
+('FD19', 'PJ40', 'API Documentation', '2022-05-27', '2023-08-03', 'Planning'),
+('FD19', 'PJ41', 'User Feedback and Testimonials', '2022-05-29', '2023-09-03', 'Stop'),
+('FD19', 'PJ42', 'Product Roadmap', '2023-04-04', '2024-10-03', 'Planning'),
+('FD19', 'PJ43', 'User Manuals', '2023-05-09', '2024-11-03', 'On-hold'),
+('FD20', 'PJ44', 'Technical Specifications', '2023-06-13', '2024-12-03', 'Planning'),
+('FD20', 'PJ45', 'Post-Release Evaluation', '2023-07-18', '2024-01-03', 'Done'),
+('FD21', 'PJ46', 'Event Marketing Materials', '2023-08-22', '2024-05-09', 'On-hold'),
+('FD22', 'PJ47', 'SEO Strategy and Planning', '2023-09-26', '2024-05-10', 'Stop'),
+('FD22', 'PJ48', 'SEO Tools Documentation', '2023-10-31', '2024-05-11', 'On-hold'),
+('FD22', 'PJ49', 'SEO Training', '2023-12-05', '2024-05-12', 'Planning'),
+('FD23', 'PJ50', 'Resume', '2024-01-09', '2025-10-08', 'Stop'),
+('FD23', 'PJ51', 'Reference List', '2024-02-13', '2025-10-09', 'On-hold'),
+('FD23', 'PJ52', 'LinkedIn Profile', '2024-03-19', '2025-10-10', 'Stop'),
+('FD24', 'PJ53', 'Video Tutorials', '2021-09-09', '2022-06-07', 'On-hold'),
+('FD24', 'PJ54', 'Attendance Records', '2021-08-05', '2022-06-08', 'Stop'),
+('FD24', 'PJ55', 'Training Calendar', '2021-07-01', '2022-06-09', 'Done'),
+('FD25', 'PJ56', 'Rejection Templates', '2021-05-27', '2022-06-10', 'Done'),
+('FD25', 'PJ57', 'Application Forms', '2021-04-22', '2022-06-11', 'Stop'),
+('FD25', 'PJ58', 'Recruitment Website', '2021-03-18', '2022-06-12', 'On-hold'),
+('FD26', 'PJ59', 'Employee Development Plans', '2021-02-11', '2022-06-13', 'Done'),
+('FD27', 'PJ60', 'Case Studies', '2021-01-07', '2022-06-14', 'Stop'),
+('FD28', 'PJ61', 'IDPs', '2020-12-03', '2022-06-15', 'Done'),
+('FD29', 'PJ62', 'Linear Regression', '2020-10-29', '2022-06-16', 'Stop')";
+
+if ($connect->query($sql_project) === TRUE) {
+    echo "Thêm dữ liệu thành công";
+} else {
+    echo "Error: " . $sql_project . "<br>" . $connect->error;
+}
+
+$connect->close();
+?>
